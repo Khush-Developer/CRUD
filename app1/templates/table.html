@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+    
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    
+  </tr>
+  <tr>
+    {% for i in table_obj %}
+    <td>{{i.id}}</td>
+    <td>{{i.name}}</td>
+    <td>{{i.email}}</td>
+    
+    <td>
+        <a href="/update/{{i.id}}">Update</a>
+      </td>
+      <td>
+        <a href="/delete/?id={{i.id}}">Delete</a>
+      </td>
+      {% endfor %}
+  </tr>
+  
+ 
+</table>
+
+</body>
+</html>
